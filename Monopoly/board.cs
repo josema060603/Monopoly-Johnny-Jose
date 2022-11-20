@@ -1,26 +1,24 @@
 namespace Monopoly;
-
-//Each property box will contain the property of Owner, price, number of green houses, number of red
-//houses, and color of property.
 public class Board
 {
-    public string Owner {
-        get; set; 
-    }
-    public string price{
+    public (int, ISpacing)[] GameBoard
+    {
         get; set;
     }
-    public int GreenHouses{
-        get; set;
+    public Board()
+    {
+        GameBoard = new (int, ISpacing)[40];
     }
-    public int RedHouses{
-        get; set;
+    public string GetBoardAsString()
+    {
+        string output = "";
+
+        return output;
     }
-    public string Color{
-        get;
-    }
-    static void ChangeOfOwner(Board Property, Player player){
-        Property.owner = player.Name;
-        player.Money - Property.price;
+    static public (int, int) RollDices(Player player)
+    {
+        int numberDice1 = 0;
+        int numberDice2 = 0;
+        return (numberDice1, numberDice2);
     }
 }
