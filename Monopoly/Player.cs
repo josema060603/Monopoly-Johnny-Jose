@@ -1,5 +1,5 @@
 namespace Monopoly;
-public class Player
+public struct Player
 {
     public string Name
     {
@@ -9,6 +9,10 @@ public class Player
     {
         get; set;
     }
+    public int moneyToPay
+    {
+        get; set;
+    }=0;
     public IEnumerable<Property> Properties
     {
         get; set;
@@ -17,12 +21,15 @@ public class Player
     {
         Name = name;
         Money = 1500;
+        Properties = new List<Property>  ();
     }
 }
 public static class ExtensionMethod
 {
     static public bool HasPlayerLost(this Player player)
     {
+        if(player.moneyToPay>player.Money)
+        return true;
         return false;
     }
 

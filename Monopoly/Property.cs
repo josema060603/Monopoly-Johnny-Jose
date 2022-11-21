@@ -4,36 +4,56 @@ namespace Monopoly;
 //houses, and color of property.
 public abstract class Property
 {
-    public string Name{get; set;}
+    public string Name { get; set; }
     public string color { get; set; }
-    public string Owner
+    public Player Owner
     {
         get; set;
     }
     public string Price
     {
-        get; set;
+        get; 
     }
     public int GreenHouses
     {
         get; set;
     }
-    public int RedHouses
+    public int Hotel
     {
         get; set;
     }
+    protected int Rent
+    {
+        get; set;
+    }
+    public int GreenHouseRentIncrement
+    {
+        get; 
+    }
+    public int HotelRentIncrement
+    {
+        get; 
+    }
 
 
-    public void ChangeOfOwner(Player newOwner)
+    public void ChangeOfOwner(Player newOwner, int price)
     {
 
     }
     public void AddGreenHouse()
     {
+      
+            GreenHouses++;
+            Rent+=GreenHouseRentIncrement;
+    
 
     }
-    public void AddRedHouse()
+    public void AddHotel()
     {
+        if (this.GreenHouses > 4)
+        {
+            GreenHouses++;
+        }
 
     }
     static public void ChangePosition(Board board)
@@ -43,3 +63,4 @@ public abstract class Property
 
 
 }
+
