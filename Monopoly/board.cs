@@ -11,7 +11,7 @@ public class Board
         var parkingLot=new FreeParkingLot();
         var jail=new Jail();
         GameBoard[20]= (parkingLot, parkingLot.Id);
-        // GameBoard[10]=(jail, jail.Id);
+        GameBoard[10]=(jail, jail.Id);
     }
     public string GetBoardAsString()
     {

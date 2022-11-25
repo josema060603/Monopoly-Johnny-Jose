@@ -1,5 +1,5 @@
 namespace Monopoly;
 public interface ISpacing
 {
-public int Id{get; set;}
+public int Id{get; }
 }

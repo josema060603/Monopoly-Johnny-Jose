@@ -2,7 +2,7 @@ namespace Monopoly;
 public class Jail : ISpacing
 {
 
-    int ISpacing.Id { get ; set ; }=10;
+    public int Id { get ; }=11;
 
     public bool CanGetOutOfJail((int, int )dice)
     {
@@ -10,4 +10,9 @@ public class Jail : ISpacing
         return true;
         return false;
     }
+}
+public class GoToJail : ISpacing
+{
+
+    public int Id {get;}=31;
 }
